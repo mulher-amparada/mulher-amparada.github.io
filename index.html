@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -17,10 +17,10 @@
 
 <meta
     name="description"
-    content="Mulher Amparada — projeto oficial de segurança, tecnologia e assistência."
+    content="Infraestrutura web responsável pela associação entre o domínio e o aplicativo Mulher Amparada."
 >
 
-<title>Mulher Amparada — Projeto oficial</title>
+<title>Mulher Amparada — App Links</title>
 
 <style>
 
@@ -53,8 +53,11 @@ html {
 
 body {
     min-height: 100vh;
+
     background: #000;
+
     color: #fff;
+
     font-family: "Quicksand", sans-serif;
 }
 
@@ -65,8 +68,37 @@ body {
 
 .page {
     width: min(1180px, 100%);
+
     margin: auto;
-    padding: 26px;
+
+    padding:
+        26px;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.fade-up {
+    opacity: 0;
+
+    animation:
+        fadeUp .65s ease both;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(15px);
+    }
+
 }
 
 
@@ -76,30 +108,38 @@ body {
 
 nav {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding:
         8px
         0
-        90px;
+        100px;
+
+    animation-delay: .05s;
 }
 
 .brand {
     color: #fff;
+
     text-decoration: none;
 
     font-size: 15px;
+
     font-weight: 700;
 
-    letter-spacing: -.3px;
+    letter-spacing: -.4px;
 }
 
 .nav-link {
-    color: #66666d;
+    color: #55555c;
+
     text-decoration: none;
 
     font-size: 13px;
+
     font-weight: 600;
 
     transition:
@@ -118,7 +158,7 @@ nav {
 .hero {
     position: relative;
 
-    max-width: 940px;
+    max-width: 980px;
 
     margin:
         0
@@ -127,7 +167,7 @@ nav {
     padding:
         20px
         0
-        125px;
+        130px;
 
     text-align: center;
 }
@@ -137,13 +177,14 @@ nav {
 
     position: absolute;
 
-    width: 520px;
-    height: 520px;
+    width: 560px;
+    height: 560px;
 
-    top: -170px;
+    top: -190px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     border-radius: 50%;
 
@@ -151,7 +192,7 @@ nav {
 
     opacity: .025;
 
-    filter: blur(120px);
+    filter: blur(130px);
 
     pointer-events: none;
 }
@@ -165,6 +206,10 @@ nav {
     position: relative;
 
     display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
 
     margin-bottom: 30px;
 
@@ -182,11 +227,24 @@ nav {
 
     color: #77777f;
 
-    font-size: 11px;
+    font-size: 10px;
+
     font-weight: 700;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.6px;
+
     text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #fff;
 }
 
 
@@ -197,18 +255,18 @@ nav {
 .hero h1 {
     position: relative;
 
-    max-width: 900px;
+    max-width: 950px;
 
     margin: auto;
 
     font-size:
         clamp(
-            52px,
+            50px,
             9vw,
-            100px
+            104px
         );
 
-    line-height: .92;
+    line-height: .9;
 
     letter-spacing: -6px;
 
@@ -218,7 +276,7 @@ nav {
 .hero h1 span {
     display: block;
 
-    color: #55555c;
+    color: #4f4f56;
 }
 
 
@@ -229,27 +287,27 @@ nav {
 .hero-description {
     position: relative;
 
-    max-width: 650px;
+    max-width: 680px;
 
     margin:
-        32px
+        34px
         auto
         0;
 
     color: #85858d;
 
-    font-size: 17px;
+    font-size: 16px;
 
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
 .hero-description strong {
-    color: #c7c7cc;
+    color: #d2d2d6;
 }
 
 
 /* =========================================================
-   BUTTONS
+   ACTIONS
 ========================================================= */
 
 .actions {
@@ -270,6 +328,7 @@ nav {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     min-height: 50px;
@@ -280,7 +339,7 @@ nav {
 
     border:
         1px solid
-        #2b2b31;
+        #29292f;
 
     border-radius: 999px;
 
@@ -291,6 +350,7 @@ nav {
     text-decoration: none;
 
     font-size: 13px;
+
     font-weight: 700;
 
     transition:
@@ -321,46 +381,49 @@ nav {
 
 
 /* =========================================================
-   REPOSITORY
+   CONNECTION
 ========================================================= */
 
-.repository {
-    display: flex;
+.connection {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
 
     align-items: center;
 
-    justify-content: space-between;
-
-    gap: 25px;
+    gap: 22px;
 
     padding:
-        26px
-        28px;
+        30px;
 
     border:
         1px solid
-        #1d1d22;
+        #1c1c21;
 
-    border-radius: 24px;
+    border-radius: 26px;
 
     background:
         linear-gradient(
             135deg,
             #08080a,
-            #050507
+            #040405
         );
 }
 
-.repository-info {
+.connection-box {
     min-width: 0;
 }
 
-.repository-label {
-    margin-bottom: 7px;
+.connection-label {
+    margin-bottom: 8px;
 
-    color: #4e4e55;
+    color: #4f4f56;
 
     font-size: 10px;
+
     font-weight: 700;
 
     letter-spacing: 1.7px;
@@ -368,40 +431,39 @@ nav {
     text-transform: uppercase;
 }
 
-.repository-name {
+.connection-name {
     overflow: hidden;
 
-    color: #d4d4d9;
+    color: #d8d8dc;
 
     font-size: 14px;
+
     font-weight: 700;
 
     text-overflow: ellipsis;
+
     white-space: nowrap;
 }
 
-.repository-status {
+.connection-arrow {
     display: flex;
 
     align-items: center;
 
-    gap: 8px;
+    justify-content: center;
 
-    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
 
-    color: #66666e;
-
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.status-dot {
-    width: 6px;
-    height: 6px;
+    border:
+        1px solid
+        #29292f;
 
     border-radius: 50%;
 
-    background: #fff;
+    color: #77777e;
+
+    font-size: 18px;
 }
 
 
@@ -411,7 +473,7 @@ nav {
 
 .section {
     padding:
-        125px
+        130px
         0
         20px;
 }
@@ -430,6 +492,7 @@ nav {
     color: #55555c;
 
     font-size: 10px;
+
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -440,12 +503,12 @@ nav {
 .section-heading h2 {
     font-size:
         clamp(
-            32px,
+            34px,
             5vw,
-            54px
+            56px
         );
 
-    line-height: 1;
+    line-height: .98;
 
     letter-spacing: -3px;
 }
@@ -480,7 +543,7 @@ nav {
 }
 
 .card {
-    min-height: 270px;
+    min-height: 285px;
 
     padding: 30px;
 
@@ -511,6 +574,7 @@ nav {
     color: #404047;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -536,10 +600,10 @@ nav {
 
 
 /* =========================================================
-   APP LINKS
+   TECHNICAL
 ========================================================= */
 
-.app-link {
+.technical {
     display: grid;
 
     grid-template-columns:
@@ -551,7 +615,7 @@ nav {
     gap: 12px;
 }
 
-.app-link-box {
+.technical-box {
     padding: 34px;
 
     border:
@@ -563,15 +627,17 @@ nav {
     background: #060608;
 }
 
-.app-link-box h3 {
+.technical-box h3 {
     margin-bottom: 13px;
+
+    color: #e5e5e8;
 
     font-size: 20px;
 
     letter-spacing: -.6px;
 }
 
-.app-link-box p {
+.technical-box p {
     color: #707078;
 
     font-size: 13px;
@@ -580,10 +646,10 @@ nav {
 }
 
 .code {
-    margin-top: 25px;
+    margin-top: 24px;
 
     padding:
-        15px
+        16px
         17px;
 
     overflow-x: auto;
@@ -596,23 +662,99 @@ nav {
 
     background: #020203;
 
-    color: #9999a1;
+    color: #a1a1a8;
 
     font-family: monospace;
 
     font-size: 12px;
+
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   FINAL CTA
+   FLOW
+========================================================= */
+
+.flow {
+    display: grid;
+
+    gap: 10px;
+}
+
+.flow-item {
+    display: grid;
+
+    grid-template-columns:
+        55px
+        1fr;
+
+    gap: 18px;
+
+    align-items: center;
+
+    padding:
+        22px
+        24px;
+
+    border:
+        1px solid
+        #1b1b20;
+
+    border-radius: 20px;
+
+    background: #050506;
+}
+
+.flow-number {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border:
+        1px solid
+        #29292f;
+
+    border-radius: 50%;
+
+    color: #77777e;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.flow-content h3 {
+    margin-bottom: 5px;
+
+    color: #dedee2;
+
+    font-size: 15px;
+}
+
+.flow-content p {
+    color: #66666e;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FINAL
 ========================================================= */
 
 .final {
-    margin-top: 120px;
+    margin-top: 125px;
 
     padding:
-        80px
+        85px
         30px;
 
     border:
@@ -634,16 +776,18 @@ nav {
 .final h2 {
     font-size:
         clamp(
-            35px,
+            36px,
             6vw,
-            65px
+            66px
         );
+
+    line-height: .95;
 
     letter-spacing: -4px;
 }
 
 .final p {
-    max-width: 540px;
+    max-width: 550px;
 
     margin:
         20px
@@ -697,36 +841,37 @@ footer {
     }
 
     nav {
-        padding-bottom: 60px;
+        padding-bottom: 65px;
     }
 
     .hero {
-        padding-bottom: 80px;
+        padding-bottom: 85px;
     }
 
     .hero h1 {
         letter-spacing: -4px;
     }
 
-    .repository {
-        flex-direction: column;
-        align-items: flex-start;
+    .connection {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
     }
 
-    .repository-status {
-        padding-top: 3px;
+    .connection-arrow {
+        transform: rotate(90deg);
     }
 
     .cards {
         grid-template-columns: 1fr;
     }
 
-    .app-link {
+    .technical {
         grid-template-columns: 1fr;
     }
 
     .card {
-        min-height: 230px;
+        min-height: 235px;
     }
 
     .card-number {
@@ -734,7 +879,9 @@ footer {
     }
 
     .final {
-        padding: 60px 25px;
+        padding:
+            65px
+            25px;
     }
 
 }
@@ -748,6 +895,7 @@ footer {
 
     .hero h1 {
         font-size: 51px;
+
         letter-spacing: -3px;
     }
 
@@ -771,6 +919,14 @@ footer {
         letter-spacing: -2px;
     }
 
+    .flow-item {
+        grid-template-columns:
+            45px
+            1fr;
+
+        padding: 18px;
+    }
+
     footer {
         flex-direction: column;
     }
@@ -792,7 +948,7 @@ footer {
          NAV
     ====================================================== -->
 
-    <nav>
+    <nav class="fade-up">
 
         <a
             class="brand"
@@ -805,7 +961,7 @@ footer {
             class="nav-link"
             href="/mulher-amparada-app/"
         >
-            Aplicativo
+            Abrir aplicativo
         </a>
 
     </nav>
@@ -815,30 +971,32 @@ footer {
          HERO
     ====================================================== -->
 
-    <section class="hero">
+    <section class="hero fade-up">
 
         <div class="eyebrow">
-            Projeto oficial
+            Android App Links
         </div>
+
 
         <h1>
 
-            Tecnologia para
+            O site que
 
             <span>
-                amparar.
+                conecta o app.
             </span>
 
         </h1>
 
+
         <p class="hero-description">
 
-            Este é o repositório oficial do projeto
+            Este domínio faz parte da infraestrutura do
             <strong>Mulher Amparada</strong>.
 
-            Um espaço que reúne a infraestrutura,
-            o site e os recursos responsáveis pela
-            integração com o aplicativo Android.
+            É aqui que ficam os arquivos que permitem ao
+            Android reconhecer os links do projeto e
+            direcioná-los para o aplicativo.
 
         </p>
 
@@ -849,14 +1007,14 @@ footer {
                 class="button primary"
                 href="/mulher-amparada-app/"
             >
-                Conhecer o projeto
+                Abrir aplicativo
             </a>
 
             <a
                 class="button"
                 href="https://github.com/mulher-amparada/mulher-amparada-app"
             >
-                Abrir no GitHub
+                Ver no GitHub
             </a>
 
         </div>
@@ -865,33 +1023,44 @@ footer {
 
 
     <!-- =====================================================
-         REPOSITORY
+         CONNECTION
     ====================================================== -->
 
-    <section>
+    <section class="fade-up">
 
-        <div class="repository">
+        <div class="connection">
 
-            <div class="repository-info">
 
-                <div class="repository-label">
-                    Repositório principal
+            <div class="connection-box">
+
+                <div class="connection-label">
+                    Este domínio
                 </div>
 
-                <div class="repository-name">
-                    mulher-amparada/mulher-amparada-app
+                <div class="connection-name">
+                    mulher-amparada.github.io
                 </div>
 
             </div>
 
 
-            <div class="repository-status">
+            <div class="connection-arrow">
+                →
+            </div>
 
-                <span class="status-dot"></span>
 
-                Projeto ativo
+            <div class="connection-box">
+
+                <div class="connection-label">
+                    Aplicativo Android
+                </div>
+
+                <div class="connection-name">
+                    Mulher Amparada
+                </div>
 
             </div>
+
 
         </div>
 
@@ -899,25 +1068,27 @@ footer {
 
 
     <!-- =====================================================
-         STRUCTURE
+         EXPLANATION
     ====================================================== -->
 
     <section class="section">
 
-        <div class="section-heading">
+        <div class="section-heading fade-up">
 
             <small>
-                Estrutura
+                Como funciona
             </small>
 
             <h2>
-                Um projeto conectado.
+                Um pequeno arquivo faz a conexão.
             </h2>
 
             <p>
-                O domínio principal funciona como ponto de entrada
-                para os recursos do projeto, conectando a experiência
-                web ao aplicativo Android.
+                Quando o Android acessa este domínio, ele pode
+                verificar a relação entre o site e o aplicativo.
+                Essa associação permite que determinados links
+                sejam reconhecidos pelo sistema como pertencentes
+                ao aplicativo Mulher Amparada.
             </p>
 
         </div>
@@ -926,58 +1097,60 @@ footer {
         <div class="cards">
 
 
-            <article class="card">
+            <article class="card fade-up">
 
                 <span class="card-number">
                     01
                 </span>
 
                 <h3>
-                    Aplicativo Android
+                    O navegador acessa o domínio
                 </h3>
 
                 <p>
-                    Desenvolvido em Kotlin e estruturado para
-                    concentrar os recursos e funcionalidades
-                    do projeto Mulher Amparada.
+                    O endereço web do projeto é utilizado
+                    normalmente pelo navegador e também
+                    disponibiliza os arquivos necessários
+                    para a associação.
                 </p>
 
             </article>
 
 
-            <article class="card">
+            <article class="card fade-up">
 
                 <span class="card-number">
                     02
                 </span>
 
                 <h3>
-                    Experiência web
+                    O Android verifica
                 </h3>
 
                 <p>
-                    Uma interface acessível pelo navegador,
-                    responsável por apresentar o projeto
-                    e seus recursos.
+                    O sistema consulta o arquivo de
+                    associação hospedado no domínio para
+                    confirmar que o aplicativo está autorizado
+                    a responder pelos links.
                 </p>
 
             </article>
 
 
-            <article class="card">
+            <article class="card fade-up">
 
                 <span class="card-number">
                     03
                 </span>
 
                 <h3>
-                    Integração
+                    O app recebe o link
                 </h3>
 
                 <p>
-                    O domínio também participa da associação
-                    entre os links web e o aplicativo Android
-                    através do sistema de App Links.
+                    Com a associação válida, links compatíveis
+                    podem ser direcionados diretamente para
+                    o aplicativo Mulher Amparada.
                 </p>
 
             </article>
@@ -989,65 +1162,187 @@ footer {
 
 
     <!-- =====================================================
-         APP LINKS
+         TECHNICAL
     ====================================================== -->
 
     <section class="section">
 
-        <div class="section-heading">
+        <div class="section-heading fade-up">
 
             <small>
-                Android App Links
+                Infraestrutura
             </small>
 
             <h2>
-                Site e aplicativo trabalhando juntos.
+                O que existe por trás do endereço.
             </h2>
 
             <p>
-                A associação permite que o Android reconheça
-                o aplicativo como responsável pelos links
-                correspondentes ao projeto.
+                O repositório não serve apenas para apresentar
+                uma página. Ele também hospeda a infraestrutura
+                web necessária para a integração com o Android.
             </p>
 
         </div>
 
 
-        <div class="app-link">
+        <div class="technical">
 
 
-            <div class="app-link-box">
+            <div class="technical-box fade-up">
 
                 <h3>
-                    Domínio oficial
+                    Arquivo de associação
                 </h3>
 
                 <p>
-                    Endereço utilizado pelo projeto para
-                    hospedar a página principal e os arquivos
-                    de verificação da associação Android.
+                    O Android utiliza o arquivo
+                    <strong>assetlinks.json</strong>
+                    para verificar a relação entre o domínio
+                    e o aplicativo instalado.
                 </p>
 
                 <div class="code">
-                    mulher-amparada.github.io
+                    /.well-known/assetlinks.json
                 </div>
 
             </div>
 
 
-            <div class="app-link-box">
+            <div class="technical-box fade-up">
 
                 <h3>
-                    Aplicativo Android
+                    Aplicativo associado
                 </h3>
 
                 <p>
-                    Identificador do aplicativo utilizado
-                    durante a associação com o domínio.
+                    O arquivo informa ao Android qual aplicativo
+                    está autorizado a responder pelos links
+                    correspondentes ao domínio.
                 </p>
 
                 <div class="code">
-                    com.mulheres
+                    Mulher Amparada · Android
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FLOW
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-heading fade-up">
+
+            <small>
+                Fluxo
+            </small>
+
+            <h2>
+                Da barra de endereço ao aplicativo.
+            </h2>
+
+            <p>
+                A integração acontece em etapas simples.
+            </p>
+
+        </div>
+
+
+        <div class="flow">
+
+
+            <div class="flow-item fade-up">
+
+                <div class="flow-number">
+                    01
+                </div>
+
+                <div class="flow-content">
+
+                    <h3>
+                        Um link é acessado
+                    </h3>
+
+                    <p>
+                        O usuário acessa um endereço pertencente
+                        ao domínio do projeto.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="flow-item fade-up">
+
+                <div class="flow-number">
+                    02
+                </div>
+
+                <div class="flow-content">
+
+                    <h3>
+                        O Android identifica a associação
+                    </h3>
+
+                    <p>
+                        O sistema verifica as informações
+                        disponibilizadas pelo domínio.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="flow-item fade-up">
+
+                <div class="flow-number">
+                    03
+                </div>
+
+                <div class="flow-content">
+
+                    <h3>
+                        O aplicativo é reconhecido
+                    </h3>
+
+                    <p>
+                        O Android identifica o Mulher Amparada
+                        como aplicativo associado ao endereço.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="flow-item fade-up">
+
+                <div class="flow-number">
+                    04
+                </div>
+
+                <div class="flow-content">
+
+                    <h3>
+                        O link pode abrir o aplicativo
+                    </h3>
+
+                    <p>
+                        A navegação pode ser entregue diretamente
+                        ao aplicativo em vez de permanecer apenas
+                        na página web.
+                    </p>
+
                 </div>
 
             </div>
@@ -1062,17 +1357,21 @@ footer {
          FINAL
     ====================================================== -->
 
-    <section class="final">
+    <section class="final fade-up">
 
         <h2>
-            Conheça o projeto.
+            Site e aplicativo.
+            <br>
+            Uma conexão.
         </h2>
 
         <p>
-            Acesse o aplicativo, conheça sua estrutura
-            e acompanhe o desenvolvimento diretamente
-            pelo repositório oficial.
+            Este endereço é uma parte silenciosa da infraestrutura
+            do Mulher Amparada: mantém a página web disponível e
+            fornece ao Android as informações necessárias para
+            reconhecer o aplicativo.
         </p>
+
 
         <div class="actions">
 
@@ -1080,7 +1379,7 @@ footer {
                 class="button primary"
                 href="/mulher-amparada-app/"
             >
-                Acessar o aplicativo
+                Abrir aplicativo
             </a>
 
             <a
@@ -1106,7 +1405,7 @@ footer {
         </span>
 
         <span>
-            Projeto oficial · 2026
+            Infraestrutura web · 2026
         </span>
 
     </footer>
