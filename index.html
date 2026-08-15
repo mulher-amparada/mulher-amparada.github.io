@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="theme-color"
+    content="#000000"
+>
+
+<meta
+    name="description"
+    content="Mulher Amparada — projeto de segurança, tecnologia e assistência."
+>
+
+<title>Mulher Amparada — Projeto oficial</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    padding: 28px;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0 70px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -.3px;
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #29292f;
+    border-radius: 12px;
+    background: #0a0a0c;
+}
+
+.brand-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.nav-link {
+    color: #777780;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .2s ease;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0 110px;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #fff;
+    opacity: .035;
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.eyebrow {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 28px;
+    padding: 8px 13px;
+    border: 1px solid #24242a;
+    border-radius: 999px;
+    background: #08080a;
+    color: #9999a3;
+    font-size: 12px;
+}
+
+.eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.hero h1 {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: clamp(48px, 9vw, 92px);
+    line-height: .95;
+    letter-spacing: -5px;
+    font-weight: 750;
+}
+
+.hero h1 span {
+    color: #777780;
+}
+
+.hero-description {
+    position: relative;
+    max-width: 650px;
+    margin: 30px auto 0;
+    color: #8b8b94;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.actions {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 0 22px;
+    border: 1px solid #303038;
+    border-radius: 160px;
+    background: #0b0b0e;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    border-color: #55555e;
+    background: #111115;
+}
+
+.button.primary {
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+}
+
+.button.primary:hover {
+    background: #e9e9e9;
+}
+
+.button svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   REPOSITORY
+========================================================= */
+
+.repository {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 25px;
+    border: 1px solid #202027;
+    border-radius: 22px;
+    background: #070709;
+}
+
+.repository-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+}
+
+.github-icon {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #292930;
+    border-radius: 15px;
+    background: #0d0d10;
+}
+
+.github-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.repository-text {
+    min-width: 0;
+}
+
+.repository-label {
+    margin-bottom: 6px;
+    color: #55555e;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.repository-name {
+    overflow: hidden;
+    color: #dddde2;
+    font-size: 15px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.repository-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #85858e;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.section-heading small {
+    display: block;
+    margin-bottom: 12px;
+    color: #66666f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    letter-spacing: -2px;
+}
+
+.section-heading p {
+    margin-top: 16px;
+    color: #777780;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.card {
+    min-height: 250px;
+    padding: 28px;
+    border: 1px solid #202027;
+    border-radius: 24px;
+    background: #070709;
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 35px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #292930;
+    border-radius: 14px;
+    background: #0d0d10;
+}
+
+.card-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.card h3 {
+    margin-bottom: 11px;
+    font-size: 18px;
+    letter-spacing: -.4px;
+}
+
+.card p {
+    color: #73737c;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   APP LINK SECTION
+========================================================= */
+
+.app-link {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.app-link-box {
+    padding: 32px;
+    border: 1px solid #202027;
+    border-radius: 25px;
+    background: #070709;
+}
+
+.app-link-box h3 {
+    margin-bottom: 13px;
+    font-size: 20px;
+}
+
+.app-link-box p {
+    color: #777780;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.code {
+    margin-top: 22px;
+    padding: 15px 17px;
+    overflow-x: auto;
+    border: 1px solid #1f1f25;
+    border-radius: 14px;
+    background: #030304;
+    color: #aaaab3;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 35px 0 15px;
+    border-top: 1px solid #18181d;
+    color: #4f4f57;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .page {
+        padding: 20px;
+    }
+
+    nav {
+        padding-bottom: 45px;
+    }
+
+    .hero {
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .app-link {
+        grid-template-columns: 1fr;
+    }
+
+    .repository {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .nav-link {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+    <!-- =====================================================
+         NAV
+    ====================================================== -->
+
+    <nav>
+
+        <a
+            class="brand"
+            href="/"
+        >
+
+            <span class="brand-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M12 3L20 6V11.5C20 16.5 16.7 20.2 12 21C7.3 20.2 4 16.5 4 11.5V6L12 3Z"
+                        stroke="white"
+                        stroke-width="1.6"
+                        stroke-linejoin="round"
+                    />
+
+                    <path
+                        d="M8.5 12L10.8 14.3L15.8 9.3"
+                        stroke="white"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+
+                </svg>
+
+            </span>
+
+            Mulher Amparada
+
+        </a>
+
+        <a
+            class="nav-link"
+            href="/mulher-amparada-app/"
+        >
+            Aplicativo
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <div class="eyebrow">
+
+            <span class="eyebrow-dot"></span>
+
+            Projeto oficial
+
+        </div>
+
+        <h1>
+
+            Tecnologia para
+            <span>amparar.</span>
+
+        </h1>
+
+        <p class="hero-description">
+
+            Este é o repositório oficial do projeto
+            <strong>Mulher Amparada</strong>.
+            Aqui estão centralizados os recursos utilizados
+            pelo site e pela integração com o aplicativo Android.
+
+        </p>
+
+        <div class="actions">
+
+            <a
+                class="button primary"
+                href="/mulher-amparada-app/"
+            >
+
+                Conhecer o projeto
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M5 12H19"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                    />
+
+                    <path
+                        d="M13 6L19 12L13 18"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+
+                </svg>
+
+            </a>
+
+            <a
+                class="button"
+                href="https://github.com/mulher-amparada/mulher-amparada-app"
+            >
+
+                GitHub
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M12 2.8C6.9 2.8 2.8 6.9 2.8 12C2.8 16.1 5.45 19.55 9.15 20.8C9.6 20.9 9.75 20.65 9.75 20.4V18.8C7.2 19.35 6.6 17.7 6.6 17.7C6.2 16.7 5.6 16.45 5.6 16.45C4.75 15.9 5.65 15.9 5.65 15.9C6.6 15.95 7.1 16.9 7.1 16.9C7.95 18.35 9.3 17.95 9.8 17.7C9.9 17.05 10.15 16.6 10.4 16.35C8.35 16.1 6.2 15.35 6.2 11.55C6.2 10.45 6.6 9.6 7.15 8.95C7.05 8.7 6.7 7.7 7.25 6.35C7.25 6.35 8.05 6.1 9.75 7.25C10.5 7.05 11.25 6.95 12 6.95C12.75 6.95 13.5 7.05 14.25 7.25C15.95 6.1 16.75 6.35 16.75 6.35C17.3 7.7 16.95 8.7 16.85 8.95C17.4 9.6 17.8 10.45 17.8 11.55C17.8 15.35 15.65 16.1 13.6 16.35C13.9 16.65 14.2 17.25 14.2 18.15V20.4C14.2 20.65 14.35 20.9 14.8 20.8C18.5 19.55 21.2 16.1 21.2 12C21.2 6.9 17.1 2.8 12 2.8Z"
+                        fill="currentColor"
+                    />
+
+                </svg>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REPOSITORY
+    ====================================================== -->
+
+    <section>
+
+        <div class="repository">
+
+            <div class="repository-info">
+
+                <div class="github-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <path
+                            d="M12 2.8C6.9 2.8 2.8 6.9 2.8 12C2.8 16.1 5.45 19.55 9.15 20.8C9.6 20.9 9.75 20.65 9.75 20.4V18.8C7.2 19.35 6.6 17.7 6.6 17.7C6.2 16.7 5.6 16.45 5.6 16.45C4.75 15.9 5.65 15.9 5.65 15.9C6.6 15.95 7.1 16.9 7.1 16.9C7.95 18.35 9.3 17.95 9.8 17.7C9.9 17.05 10.15 16.6 10.4 16.35C8.35 16.1 6.2 15.35 6.2 11.55C6.2 10.45 6.6 9.6 7.15 8.95C7.05 8.7 6.7 7.7 7.25 6.35C7.25 6.35 8.05 6.1 9.75 7.25C10.5 7.05 11.25 6.95 12 6.95C12.75 6.95 13.5 7.05 14.25 7.25C15.95 6.1 16.75 6.35 16.75 6.35C17.3 7.7 16.95 8.7 16.85 8.95C17.4 9.6 17.8 10.45 17.8 11.55C17.8 15.35 15.65 16.1 13.6 16.35C13.9 16.65 14.2 17.25 14.2 18.15V20.4C14.2 20.65 14.35 20.9 14.8 20.8C18.5 19.55 21.2 16.1 21.2 12C21.2 6.9 17.1 2.8 12 2.8Z"
+                            fill="white"
+                        />
+
+                    </svg>
+
+                </div>
+
+                <div class="repository-text">
+
+                    <div class="repository-label">
+                        Repositório principal
+                    </div>
+
+                    <div class="repository-name">
+                        mulher-amparada/mulher-amparada-app
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="repository-status">
+
+                <span class="status-dot"></span>
+
+                Projeto ativo
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURES
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <small>
+                Estrutura
+            </small>
+
+            <h2>
+                Um projeto conectado.
+            </h2>
+
+            <p>
+                O domínio principal funciona como ponto de entrada
+                para os recursos do projeto e também participa da
+                integração entre a experiência web e o aplicativo.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <article class="card">
+
+                <div class="card-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <rect
+                            x="5"
+                            y="3"
+                            width="14"
+                            height="18"
+                            rx="2"
+                            stroke="white"
+                            stroke-width="1.6"
+                        />
+
+                        <path
+                            d="M9 18H15"
+                            stroke="white"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Aplicativo Android
+                </h3>
+
+                <p>
+                    Aplicativo desenvolvido em Kotlin,
+                    com recursos voltados para segurança,
+                    assistência e praticidade.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="8.5"
+                            stroke="white"
+                            stroke-width="1.6"
+                        />
+
+                        <path
+                            d="M3.8 12H20.2"
+                            stroke="white"
+                            stroke-width="1.6"
+                        />
+
+                        <path
+                            d="M12 3.5C14.2 5.8 15.3 8.65 15.3 12C15.3 15.35 14.2 18.2 12 20.5C9.8 18.2 8.7 15.35 8.7 12C8.7 8.65 9.8 5.8 12 3.5Z"
+                            stroke="white"
+                            stroke-width="1.6"
+                        />
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Experiência web
+                </h3>
+
+                <p>
+                    Uma interface web moderna que apresenta
+                    o projeto e seus recursos diretamente
+                    pelo navegador.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <path
+                            d="M12 3L20 6V11.5C20 16.5 16.7 20.2 12 21C7.3 20.2 4 16.5 4 11.5V6L12 3Z"
+                            stroke="white"
+                            stroke-width="1.6"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M8.5 12L10.8 14.3L15.8 9.3"
+                            stroke="white"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Associação Android
+                </h3>
+
+                <p>
+                    Este domínio também fornece os recursos
+                    necessários para a associação segura entre
+                    o site e o aplicativo Android.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         APP LINKS
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <small>
+                Android App Links
+            </small>
+
+            <h2>
+                Site e aplicativo trabalhando juntos.
+            </h2>
+
+            <p>
+                Este domínio possui a configuração necessária
+                para permitir que o Android reconheça o aplicativo
+                Mulher Amparada como responsável por determinados
+                links do projeto.
+            </p>
+
+        </div>
+
+
+        <div class="app-link">
+
+
+            <div class="app-link-box">
+
+                <h3>
+                    Domínio associado
+                </h3>
+
+                <p>
+                    O domínio oficial utilizado pelo projeto
+                    é associado ao aplicativo Android através
+                    da verificação de identidade do sistema.
+                </p>
+
+                <div class="code">
+                    mulher-amparada.github.io
+                </div>
+
+            </div>
+
+
+            <div class="app-link-box">
+
+                <h3>
+                    Aplicativo
+                </h3>
+
+                <p>
+                    O aplicativo Android identificado para essa
+                    associação utiliza o package abaixo.
+                </p>
+
+                <div class="code">
+                    com.mulheres
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <span>
+            Mulher Amparada
+        </span>
+
+        <span>
+            Projeto oficial · 2026
+        </span>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>
